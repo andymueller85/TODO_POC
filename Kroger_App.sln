@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{681B6F
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kroger_Web", "Kroger_Web\Kroger_Web.csproj", "{100D4145-99F8-4E48-BB8A-B4143E9DEF71}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,10 @@ Global
 		{767E7BFF-75DA-4B31-AF0F-66D7C8BD8430}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{767E7BFF-75DA-4B31-AF0F-66D7C8BD8430}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{767E7BFF-75DA-4B31-AF0F-66D7C8BD8430}.Release|Any CPU.Build.0 = Release|Any CPU
+		{100D4145-99F8-4E48-BB8A-B4143E9DEF71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{100D4145-99F8-4E48-BB8A-B4143E9DEF71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{100D4145-99F8-4E48-BB8A-B4143E9DEF71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{100D4145-99F8-4E48-BB8A-B4143E9DEF71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
