@@ -12,19 +12,19 @@
         vm.newTodo = {};
         vm.todos = [];
         vm.addTodo = addTodo;
-        vm.deleteTodo = deleteTodo
+        vm.deleteTodo = deleteTodo;
 
         activate();
 
         function activate() {
-            seedTodos();
+            getTodos();
         }
 
-        function seedTodos() {
+        function getTodos() {
             todoService.getTodos()
-            .then(seedTodosComplete);
+            .then(getTodosComplete);
 
-            function seedTodosComplete(response) {
+            function getTodosComplete(response) {
                 angular.forEach(response, function (value, key) {
                     vm.todos.push({
                         id: value.Id,

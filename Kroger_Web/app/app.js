@@ -3,5 +3,4 @@
 
     angular
         .module('app', ['ngRoute', 'app.todo'])
-        .run();
 })();
