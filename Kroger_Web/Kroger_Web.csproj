@@ -57,6 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\jasmine\MIT.LICENSE" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -67,11 +68,26 @@
   <ItemGroup>
     <Content Include="app\app.js" />
     <Content Include="app\appRoutes.js" />
+    <Content Include="app\external\angular-mocks.js" />
     <Content Include="app\external\angular-route.js" />
     <Content Include="app\external\angular.js" />
+    <Content Include="app\jasmine\lib\jasmine-2.3.4\boot.js" />
+    <Content Include="app\jasmine\lib\jasmine-2.3.4\console.js" />
+    <Content Include="app\jasmine\lib\jasmine-2.3.4\jasmine-html.js" />
+    <Content Include="app\jasmine\lib\jasmine-2.3.4\jasmine.css" />
+    <Content Include="app\jasmine\lib\jasmine-2.3.4\jasmine.js" />
+    <Content Include="app\jasmine\lib\jasmine-2.3.4\jasmine_favicon.png" />
+    <Content Include="app\jasmine\SpecRunner.html" />
+    <Content Include="app\jasmine\spec\PlayerSpec.js" />
+    <Content Include="app\jasmine\spec\SpecHelper.js" />
+    <Content Include="app\jasmine\spec\TodoSpec.js" />
+    <Content Include="app\jasmine\src\Player.js" />
+    <Content Include="app\jasmine\src\Song.js" />
     <Content Include="app\todo\todo.controller.js" />
     <Content Include="app\todo\todo.html" />
     <Content Include="app\todo\todo.module.js" />
+    <Content Include="app\todo\todo.service.js" />
+    <Content Include="app\utility.service.js" />
     <Content Include="css\style.css" />
     <Content Include="index.html" />
     <Content Include="Web.config" />

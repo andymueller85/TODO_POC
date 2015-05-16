@@ -1,3 +1,26 @@
-﻿<div>
-    Hello {{vm.world}} from Todo
+﻿<form>
+    <div>
+        <span>Title:</span>
+        <input ng-model="vm.newTodo.title" />
+    </div>
+    <div>
+        <span>Description:</span>
+        <input ng-model="vm.newTodo.description" />
+    </div>
+    <div>
+        <span>Start Date:</span>
+        <input ng-model="vm.newTodo.startDate" />
+    </div>
+    <div>
+        <span>End Date:</span>
+        <input ng-model="vm.newTodo.endDate" />
+    </div>
+    <button ng-click="vm.addTodo()">Add</button>
+</form>
+
+<div ng-repeat="todo in vm.todos">
+    <div>{{todo.title}}</div>
+    <div>{{todo.description}}</div>
+    <div>{{todo.startDate}}</div>
+    <div>{{todo.endDate}}</div>
 </div>
