@@ -58,6 +58,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\jasmine\MIT.LICENSE" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -68,9 +72,6 @@
   <ItemGroup>
     <Content Include="app\app.js" />
     <Content Include="app\appRoutes.js" />
-    <Content Include="app\external\angular-mocks.js" />
-    <Content Include="app\external\angular-route.js" />
-    <Content Include="app\external\angular.js" />
     <Content Include="app\jasmine\lib\jasmine-2.3.4\boot.js" />
     <Content Include="app\jasmine\lib\jasmine-2.3.4\console.js" />
     <Content Include="app\jasmine\lib\jasmine-2.3.4\jasmine-html.js" />
@@ -89,6 +90,9 @@
     <Content Include="app\todo\todo.service.js" />
     <Content Include="app\utility.service.js" />
     <Content Include="css\style.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="img\glyphicons-halflings-white.png" />
+    <Content Include="img\glyphicons-halflings.png" />
     <Content Include="index.html" />
     <Content Include="Web.config" />
   </ItemGroup>

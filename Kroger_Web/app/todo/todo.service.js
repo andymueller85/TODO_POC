@@ -9,7 +9,9 @@
 
     function todoService($http, utilityService) {
         var service = {
-            addTodo: addTodo
+            addTodo: addTodo,
+            getTodos: getTodos,
+            deleteTodo: deleteTodo
         };
 
         return service;
@@ -22,7 +24,7 @@
                 StopDate: todo.stopDate
             })
             .then(addTodoComplete)
-            .catch(addTodoError)
+            .catch(addTodoError);
 
             function addTodoComplete(response) {
                 console.log("Todo ID: " + response.data + " successfully added");
@@ -34,5 +36,25 @@
                 throw (error);
             }
         }
+
+        function getTodos() {
+            return $http.get(utilityService.getUrl('todo'))
+            .then(getTodosComplete);
+
+            function getTodosComplete(response) {
+                return response.data;
+            }
+        }
+
+        function deleteTodo(id) {
+            return $http.delete(utilityService.getUrl('todo/' + id))
+            .then(deleteTodoComplete);
+
+            function deleteTodoComplete(response) {
+                console.log("deleted todo " + response.data);
+                return;
+            }
+        }
     }
+
 })();

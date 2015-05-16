@@ -1,2 +1,29 @@
-﻿body {
+﻿.nav, .pagination, .carousel, .panel-title a { 
+    cursor: pointer; 
+}
+.list-group li {
+    list-style: none;
+}
+.panel {
+    float: left;
+    margin: 10px 10px 0 0;
+    width: 160px;
+}
+.panel-item{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.panel-heading{
+    position: relative;
+}
+.panel-heading a{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+button {
+    margin-top: 15px;
+}
+.wrap {
+    word-wrap: break-word;
 }

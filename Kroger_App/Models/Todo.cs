@@ -7,6 +7,8 @@ namespace Kroger_App.Models
 {
     public class Todo
     {
+        public String Id { get; set; }
+
         public String Title { get; set; }
 
         public String Description { get; set; }

@@ -1,26 +1,61 @@
-﻿<form>
-    <div>
-        <span>Title:</span>
-        <input ng-model="vm.newTodo.title" />
-    </div>
-    <div>
-        <span>Description:</span>
-        <input ng-model="vm.newTodo.description" />
-    </div>
-    <div>
-        <span>Start Date:</span>
-        <input ng-model="vm.newTodo.startDate" />
-    </div>
-    <div>
-        <span>End Date:</span>
-        <input ng-model="vm.newTodo.endDate" />
-    </div>
-    <button ng-click="vm.addTodo()">Add</button>
-</form>
+﻿<div class="container">
+    <form name="todoform" ng-submit="todoform.$valid && vm.addTodo()">
+        <h4>
+            Title
+        </h4>
+        <div class="row">
+            <div class="col-md-6">
+                <input class="form-control" ng-model="vm.newTodo.title" ng-required="true" />
+            </div>
+        </div>
+        <h4>Description</h4>
+        <div class="row">
+            <div class="col-md-6">
+                <input class="form-control" ng-model="vm.newTodo.description" ng-required="true" />
+            </div>
+        </div>
+        <h4>
+            Start Date
+        </h4>
+        <div class="row">
+            <div class="col-md-6">
+                <input type="date"
+                       class="form-control"
+                       datepicker-popup
+                       ng-model="vm.newTodo.startDate"
+                       ng-required="true"
+                       close-text="Close" />
+            </div>
+        </div>
+        <h4>
+            End Date
+        </h4>
+        <div class="row">
+            <div class="col-md-6">
+                <input type="date"
+                       class="form-control"
+                       datepicker-popup
+                       ng-model="vm.newTodo.endDate"                       
+                       ng-required="true"
+                       close-text="Close" />
 
-<div ng-repeat="todo in vm.todos">
-    <div>{{todo.title}}</div>
-    <div>{{todo.description}}</div>
-    <div>{{todo.startDate}}</div>
-    <div>{{todo.endDate}}</div>
+            </div>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Add Todo</button>
+    </form>
+
+    <ul class="list-group">
+        <li class="panel panel-primary" ng-repeat="todo in vm.todos">
+            <div class="panel-heading panel-title wrap">{{todo.title}}
+                <a ng-click="vm.deleteTodo(todo)" class="right glyphicon glyphicon-remove"></a>
+            </div>
+            <h4 class="panel-item" class="wrap">Description</h4>
+            <div class="panel-item">{{todo.description}}</div>
+            <h4 class="panel-item">Start Date</h4>
+            <div class="panel-item">{{todo.startDate | date:'MM/dd/yyyy'}}</div>
+            <h4 class="panel-item">End Date</h4>
+            <div class="panel-item">{{todo.endDate | date:'MM/dd/yyyy'}}</div>
+        </li>
+    </ul>
 </div>
