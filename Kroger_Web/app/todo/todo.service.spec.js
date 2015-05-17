@@ -10,7 +10,7 @@
 
     beforeEach(module(function ($provide) {        
         mockUtilityService = {
-            getUrl: function (dest) {
+            getUrl: function () {
                 return "someUrl"
             }
         };
@@ -39,7 +39,6 @@
         });
     });
 
-
     describe('todoService deleteTodo', function () {
         it('should make an ajax call to delete a todo', function () {
             $httpBackend.whenDELETE("someUrl").respond(200, "1");
@@ -51,7 +50,12 @@
 
     describe('todoService addTodo', function () {
         it('should make an ajax call to delete a todo', function () {
-            $httpBackend.whenPOST("someUrl").respond(200, "1");
+            $httpBackend.whenPOST("someUrl", {
+                Title: newTodo.title,
+                Description: newTodo.description,
+                StartDate: newTodo.startDate,
+                StopDate: newTodo.stopDate
+            }).respond(200, "1");
             var response = myService.addTodo(newTodo);
             $httpBackend.flush();
             expect(response.$$state.value).toEqual("1");

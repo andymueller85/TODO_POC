@@ -11,8 +11,7 @@
         myStartDate,
         mystopDate,
         $q,
-        $rootScope;
-        
+        $rootScope;        
 
     beforeEach(inject(function ($controller, _$q_, _$rootScope_) {
         $q = _$q_;
@@ -41,17 +40,20 @@
         todoServiceSpy.addTodo.and.returnValue($q.when(newId));
         todoServiceSpy.getTodos.and.returnValue($q.when([newServerTodo]));
         todoServiceSpy.deleteTodo.and.returnValue($q.when(newId));
-
-        var utilityServiceSpy = jasmine.createSpyObj('utilityServiceSpy', ['cloneObj', 'getUrl']);
-        utilityServiceSpy.cloneObj.and.returnValue(newTodo);
-        utilityServiceSpy.getUrl.and.returnValue("someUrl");
-        
-        ctrl = $controller('TodoController', { utilityService: utilityServiceSpy, todoService: todoServiceSpy });
+       
+        ctrl = $controller('TodoController', { todoService: todoServiceSpy });
         ctrl.newTodo = newTodo;
     }));
 
-    describe('TodoController addTodo', function () {
+    describe('TodoController initail load', function () {
+        it('initializes the Todo Controller', function () {
+            $rootScope.$digest();
+            expect(ctrl.todos.length).toEqual(1);
+            expect(ctrl.todos[0]).toEqual(newTodo);
+        });
+    });
 
+    describe('TodoController addTodo', function () {
         it('is defined', function () {
             expect(ctrl.addTodo).toBeDefined();
         });
@@ -65,16 +67,7 @@
             expect(ctrl.todos[1]).toEqual(newTodo);
         });
     });
-
-    describe('TodoController getTodos', function () {
-        it('gets Todos via the todo service', function () {
-            // getTodos is called on initialization
-            $rootScope.$digest();
-            expect(ctrl.todos.length).toEqual(1);
-            expect(ctrl.todos[0]).toEqual(newTodo);
-        });
-    });
-
+               
     describe('TodoController deleteTodo', function () {
         it('is defined', function () {
             expect(ctrl.deleteTodo).toBeDefined();

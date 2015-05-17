@@ -15,23 +15,4 @@
             expect(url).toEqual('http://localhost:41312/api/foo');            
         });
     });
-
-    describe('UtilityService cloneObj', function () {
-        it('returns a copy of the original object', function () {
-            var obj = {
-                val1: "value1",
-                val2: "value2",
-                val3: [1, 2, 3],
-                val4: {inner1: "inner1", inner2: "inner2"}
-            };
-
-            var objClone = myService.cloneObj(obj);
-
-            expect(objClone).not.toBe(null);
-            expect(objClone.val1).toEqual("value1");
-            expect(objClone.val2).toEqual("value2");
-            expect(objClone.val3).toEqual([1, 2, 3]);
-            expect(objClone.val4).toEqual({ inner1: "inner1", inner2: "inner2" });
-        });
-    });
 });

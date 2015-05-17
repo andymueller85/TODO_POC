@@ -36,7 +36,7 @@
                     });
                 });
             }
-            
+
             function getTodosFailed(error) {
                 alert('An error occurred: ' + error.data.ExceptionMessage);
             }
@@ -52,7 +52,7 @@
             }
 
             function addTodoSuccess(response) {
-                var newObj = utilityService.cloneObj(vm.newTodo)
+                var newObj = angular.copy(vm.newTodo);
                 newObj.id = response;
                 vm.todos.push(newObj);
                 vm.newTodo = {};
