@@ -57,7 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\jasmine\MIT.LICENSE" />
+    <Content Include="jasmine\MIT.LICENSE" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -72,15 +72,16 @@
   <ItemGroup>
     <Content Include="app\app.js" />
     <Content Include="app\appRoutes.js" />
-    <Content Include="app\jasmine\lib\jasmine-2.3.4\boot.js" />
-    <Content Include="app\jasmine\lib\jasmine-2.3.4\console.js" />
-    <Content Include="app\jasmine\lib\jasmine-2.3.4\jasmine-html.js" />
-    <Content Include="app\jasmine\lib\jasmine-2.3.4\jasmine.css" />
-    <Content Include="app\jasmine\lib\jasmine-2.3.4\jasmine.js" />
-    <Content Include="app\jasmine\lib\jasmine-2.3.4\jasmine_favicon.png" />
-    <Content Include="app\jasmine\SpecRunner.html" />
-    <Content Include="app\jasmine\spec\TodoSpec.js" />
-    <Content Include="app\jasmine\spec\UtilityServiceSpec.js" />
+    <Content Include="jasmine\lib\jasmine-2.3.4\boot.js" />
+    <Content Include="jasmine\lib\jasmine-2.3.4\console.js" />
+    <Content Include="jasmine\lib\jasmine-2.3.4\jasmine-html.js" />
+    <Content Include="jasmine\lib\jasmine-2.3.4\jasmine.css" />
+    <Content Include="jasmine\lib\jasmine-2.3.4\jasmine.js" />
+    <Content Include="jasmine\lib\jasmine-2.3.4\jasmine_favicon.png" />
+    <Content Include="jasmine\SpecRunner.html" />
+    <Content Include="app\todo\todo.service.spec.js" />
+    <Content Include="app\todo\todo.controller.spec.js" />
+    <Content Include="app\utility.service.spec.js" />
     <Content Include="app\todo\todo.controller.js" />
     <Content Include="app\todo\todo.html" />
     <Content Include="app\todo\todo.module.js" />
@@ -96,7 +97,9 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="jasmine\spec\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

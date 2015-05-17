@@ -44,7 +44,7 @@
 
         function addTodo() {
             if (vm.newTodo.stopDate < vm.newTodo.startDate) {
-                alert('End Date must be greater than or equal to Start Date');
+                alert('Stop Date must be greater than or equal to Start Date');
             } else {
                 todoService.addTodo(vm.newTodo)
                 .then(addTodoSuccess)
@@ -68,7 +68,7 @@
             .then(deleteTodoComplete)
             .catch(deleteTodoFailed);
 
-            function deleteTodoComplete() {
+            function deleteTodoComplete(response) {
                 var index = vm.todos.indexOf(todo);
                 if (index > -1)
                     vm.todos.splice(index, 1);

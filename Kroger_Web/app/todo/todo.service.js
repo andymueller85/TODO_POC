@@ -39,20 +39,33 @@
 
         function getTodos() {
             return $http.get(utilityService.getUrl('todo'))
-            .then(getTodosComplete);
+            .then(getTodosComplete)
+            .catch(getTodosFailed);
 
             function getTodosComplete(response) {
+                console.log("Retrieved todos from server");
                 return response.data;
+            }
+
+            function getTodosFailed(error) {
+                console.log("Error retrieving todos from server");
+                throw (error);
             }
         }
 
         function deleteTodo(id) {
             return $http.delete(utilityService.getUrl('todo/' + id))
-            .then(deleteTodoComplete);
+            .then(deleteTodoComplete)
+            .catch(deleteTodoFailed);
 
             function deleteTodoComplete(response) {
                 console.log("deleted todo " + response.data);
-                return;
+                return response.data;
+            }
+
+            function deleteTodoFailed(error) {
+                console.log(("Error deleting todo: " + error));
+                throw (error);
             }
         }
     }
