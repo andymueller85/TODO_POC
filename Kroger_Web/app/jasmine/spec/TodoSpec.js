@@ -2,13 +2,14 @@
     beforeEach(module('app'));
 
     var ctrl,
+        utilityService,
         newId,
         newTodo,
         newServerTodo,
         myTitle,
         myDesc,
         myStartDate,
-        myEndDate,
+        mystopDate,
         $q,
         $rootScope;
         
@@ -20,20 +21,20 @@
         myTitle = "My Title";
         myDesc = "My Description";
         myStartDate = "05/22/2015";
-        myEndDate = "05/26/2015"
+        mystopDate = "05/26/2015"
         newTodo = {
             id: newId,
             title: myTitle,
             description: myDesc,
             startDate: myStartDate,
-            endDate: myEndDate
+            stopDate: mystopDate
         };
         newServerTodo = {
             Id: newId,
             Title: myTitle,
             Description: myDesc,
             StartDate: myStartDate,
-            StopDate: myEndDate
+            StopDate: mystopDate
         };
 
         var todoServiceSpy = jasmine.createSpyObj('todoServiceSpy', ['addTodo', 'getTodos', 'deleteTodo']);
@@ -55,7 +56,7 @@
             expect(ctrl.addTodo).toBeDefined();
         });
 
-        it('adds a todo to the todos collection', function () {            
+        it('adds a todo to the todos collection', function () {
             ctrl.addTodo();
             $rootScope.$digest();
 
@@ -75,8 +76,15 @@
     });
 
     describe('TodoController deleteTodo', function () {
-        it('deletes a todo', function () {
-            ctrl.deleteTodo(newId);
+        it('is defined', function () {
+            expect(ctrl.deleteTodo).toBeDefined();
+        });
+
+        it('deletes a todo from the todos collection', function () {
+            $rootScope.$digest();
+            expect(ctrl.todos.length).toEqual(1);
+            ctrl.deleteTodo(ctrl.todos[0]);
+            $rootScope.$digest();
             expect(ctrl.todos.length).toEqual(0);
         });
     });

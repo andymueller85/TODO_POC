@@ -22,7 +22,8 @@
 
         function getTodos() {
             todoService.getTodos()
-            .then(getTodosComplete);
+            .then(getTodosComplete)
+            .catch(getTodosFailed);
 
             function getTodosComplete(response) {
                 angular.forEach(response, function (value, key) {
@@ -31,15 +32,19 @@
                         title: value.Title,
                         description: value.Description,
                         startDate: value.StartDate,
-                        endDate: value.StopDate
+                        stopDate: value.StopDate
                     });
                 });
+            }
+            
+            function getTodosFailed(error) {
+                alert('An error occurred: ' + error.data.ExceptionMessage);
             }
         }
 
         function addTodo() {
-            if (vm.newTodo.endDate < vm.newTodo.startDate) {
-                alert('End Date must be at least Start Date');
+            if (vm.newTodo.stopDate < vm.newTodo.startDate) {
+                alert('End Date must be greater than or equal to Start Date');
             } else {
                 todoService.addTodo(vm.newTodo)
                 .then(addTodoSuccess)
@@ -60,11 +65,17 @@
 
         function deleteTodo(todo) {
             todoService.deleteTodo(todo.id)
-            .then(deleteTodoComplete);
+            .then(deleteTodoComplete)
+            .catch(deleteTodoFailed);
 
             function deleteTodoComplete() {
                 var index = vm.todos.indexOf(todo);
-                vm.todos.splice(index, 1);
+                if (index > -1)
+                    vm.todos.splice(index, 1);
+            }
+
+            function deleteTodoFailed(error) {
+                alert('An error occurred: ' + error.data.ExceptionMessage);
             }
         }
     }

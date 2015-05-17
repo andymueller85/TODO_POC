@@ -17,6 +17,7 @@ namespace Kroger_App.Controllers
         {
             // stub.  Would get values from DB here.
             
+            // Just return some seeded Todos.  No persistence between page loads.
             return new List<Todo>()
             {
                 new Todo()
@@ -41,7 +42,7 @@ namespace Kroger_App.Controllers
         // POST: api/Todo
         public string Post([FromBody]Todo value)
         {
-            // Basically just a stub.  would save to DB here            
+            // stub.  would save to DB here            
             
             // return Todo ID
             return Guid.NewGuid().ToString();
@@ -50,7 +51,7 @@ namespace Kroger_App.Controllers
         // DELETE: api/Todo/5
         public string Delete(string id)
         {
-            // Stub.  would delete (or mark record as deleted) here.
+            // Stub.  would delete record from the DB here
 
             return id;
         }
