@@ -17,7 +17,7 @@ namespace Kroger_App.Controllers
         {
             // stub.  Would get values from DB here.
             
-            // Just return some seeded Todos.  No persistence between page loads.
+            // Just return some seeded Todos.  No persistence on the server.
             return new List<Todo>()
             {
                 new Todo()
