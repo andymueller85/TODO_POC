@@ -13,6 +13,10 @@
         vm.todos = [];
         vm.addTodo = addTodo;
         vm.deleteTodo = deleteTodo;
+        vm.startOpened = false;
+        vm.openStartPopup = openStartPopup;
+        vm.stopOpened = false;
+        vm.openStopPopup = openStopPopup;        
 
         activate();
 
@@ -78,5 +82,20 @@
                 alert('An error occurred: ' + error.data.ExceptionMessage);
             }
         }
+
+        function openStartPopup($event) {
+            $event.preventDefault();
+            $event.stopPropagation();
+
+            vm.startOpened = true;
+        };
+
+        function openStopPopup($event) {
+            $event.preventDefault();
+            $event.stopPropagation();
+
+            vm.stopOpened = true;
+        };
+
     }
 })();

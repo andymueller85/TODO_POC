@@ -1,5 +1,5 @@
 ﻿<div class="container">
-    <h2>Create a Todo</h2>    
+    <h2>Create a Todo</h2>
     <form name="todoform" ng-submit="todoform.$valid && vm.addTodo()">
         <h4>
             Title
@@ -16,40 +16,52 @@
             </div>
         </div>
         <h4>
-            Start Date <small>(yyyy-MM-dd if not in Chrome)</small>
+            Start Date</small>
         </h4>
         <div class="row">
             <div class="col-md-6">
-                <input type="date"
-                       class="form-control"
-                       datepicker-popup
-                       ng-model="vm.newTodo.startDate"
-                       ng-required="true"
-                       close-text="Close" />
+                <p class="input-group">
+                    <input type="date"
+                           class="form-control"
+                           datepicker-popup
+                           ng-model="vm.newTodo.startDate"
+                           is-open="vm.startOpened"
+                           ng-required="true"
+                           close-text="Close" />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openStartPopup($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </p>
             </div>
         </div>
         <h4>
-            Stop Date <small>(yyyy-MM-dd if not in Chrome)</small>
+            Stop Date
         </h4>
         <div class="row">
             <div class="col-md-6">
-                <input type="date"
-                       class="form-control"
-                       datepicker-popup
-                       ng-model="vm.newTodo.stopDate"                       
-                       ng-required="true"
-                       close-text="Close" />
-
+                <p class="input-group">
+                    <input type="date"
+                           class="form-control"
+                           datepicker-popup
+                           ng-model="vm.newTodo.stopDate"
+                           is-open="vm.stopOpened"
+                           ng-required="true"
+                           close-text="Close" />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openStopPopup($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </p>
             </div>
         </div>
 
-        <button class="btn btn-primary" type="submit">Add</button>
+        <button class="btn btn-primary btn-add" type="submit">Add</button>
     </form>
 
     <h2>Todos</h2>
     <ul class="list-group">
         <li class="panel panel-primary" ng-repeat="todo in vm.todos">
-            <div class="panel-heading panel-title wrap">{{todo.title}}
+            <div class="panel-heading panel-title wrap">
+                {{todo.title}}
                 <a ng-click="vm.deleteTodo(todo)" class="right glyphicon glyphicon-remove"></a>
             </div>
             <h4 class="panel-item" class="wrap">Description</h4>

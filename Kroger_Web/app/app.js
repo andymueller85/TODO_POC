@@ -2,5 +2,5 @@
     'use strict';
 
     angular
-        .module('app', ['ngRoute', 'app.todo'])
+        .module('app', ['ngRoute', 'app.todo', 'ui.bootstrap'])
 })();
