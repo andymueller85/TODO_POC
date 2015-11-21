@@ -49,7 +49,7 @@
     });
 
     describe('todoService addTodo', function () {
-        it('should make an ajax call to delete a todo', function () {
+        it('should make an ajax call to add a todo', function () {
             $httpBackend.whenPOST("someUrl", {
                 Title: newTodo.title,
                 Description: newTodo.description,
